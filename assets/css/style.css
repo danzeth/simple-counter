@@ -1,0 +1,27 @@
+body {
+  margin: 4rem;
+  background-color: rgb(46, 46, 46);
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  width: 30px;
+  padding: 5px;
+  margin: 4px;
+  background-color: #714969;
+  border-radius: 10%;
+  border-width: 0px;
+  border-style: solid;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+button:hover {
+  opacity: 80%;
+  cursor: pointer;
+}

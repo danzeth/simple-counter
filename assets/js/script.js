@@ -1,36 +1,45 @@
-/* Numero */
+function displayCounter(){ 
 
-let newLabel = document.createElement("label");
-newLabel.className = "displayCounter";
-newLabel.innerHTML = "0";
-newLabel.style.fontSize = "4rem";
-newLabel.style.color = "white";
+  let number = document.createElement("label");
+  number.className = "start-number"; // naming-conv per una classe HTML
+  number.innerHTML = "0";
 
-let divNum = document.getElementById("num");
-divNum.appendChild(newLabel);
+    let divNumber = document.getElementById("number-container");
+    divNumber.appendChild(number);
 
-/* Bottoni base (Addizione e sottrazione) */
+  let buttonPlus = document.createElement("button");
+  buttonPlus.className = "increase-button";
+  buttonPlus.innerHTML = "+";
 
-let btnPlus = document.createElement("button");
-btnPlus.innerHTML = "+";
-btnPlus.className = "increasePlusButton";
+  let buttonMinus = document.createElement("button");
+  buttonMinus.className = "decrease-button";
+  buttonMinus.innerHTML = "-";
 
-let btnMin = document.createElement("button");
-btnMin.innerHTML = "-";
-btnMin.className = "decreaseMinButton";
+    let divButtons = document.getElementById("buttons-container");
+    divButtons.appendChild(buttonMinus);
+    divButtons.appendChild(buttonPlus);
 
-let divBasic = document.getElementById("basic");
-divBasic.appendChild(btnMin);
-divBasic.appendChild(btnPlus);
 
-let count = 0;
+  const INNER_FUNCTION = initiateCounter();
 
-btnPlus.onclick = function(){
-  count+=1;
-  newLabel.innerHTML = count;
+  function initiateCounter(){
+    
+    let count = 0;
+
+    document.getElementById("buttons-container").addEventListener("click", event => {
+      if (event.target.className === "increase-button") {
+        count += 1;
+        number.innerHTML = count;
+      }
+
+      if (event.target.className === "decrease-button") {
+        count -= 1;
+        number.innerHTML = count;
+      }
+    })
+
+  };
+
 }
 
-btnMin.onclick = function(){
-  count-=1;
-  newLabel.innerHTML = count;
-}
+displayCounter();

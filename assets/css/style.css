@@ -8,6 +8,11 @@ body {
   justify-content: center;
 }
 
+label {
+  font-size: 4rem;
+  color: white;
+}
+
 button {
   width: 30px;
   padding: 5px;
